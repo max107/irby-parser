@@ -328,6 +328,12 @@ iconv-lite@^0.4.4, iconv-lite@^0.4.8:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
+iconv@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/iconv/-/iconv-2.3.0.tgz#9739887c2bd492d9a5e236dd3667c5358601201b"
+  dependencies:
+    nan "^2.3.5"
+
 inherits@^2.0.1, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
@@ -502,6 +508,10 @@ mongodb@^2.2.23:
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
+nan@^2.3.5:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
 
 needle@^2.1.1:
   version "2.1.1"

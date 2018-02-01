@@ -1,5 +1,6 @@
 const fs = require('fs');
 const json2csv = require('json2csv');
+const Iconv  = require('iconv').Iconv;
 
 function getAllStoreIds(items) {
     let ids = [];
@@ -64,6 +65,7 @@ function prepare(items) {
         const [colors, sizes] = cartesian;
 
         let product = {
+            article: item.article,
             name: item.name,
             price_current: item.price.current,
             price: item.price.price,
@@ -94,10 +96,13 @@ function prepare(items) {
 
 function save(path, products) {
     if (products.length > 0) {
-        fs.writeFileSync(path, json2csv({
+        let content = json2csv({
             data: products,
             fields: Object.keys(products[0])
-        }));
+        });
+        let iconv = new Iconv('UTF-8', 'cp1251');
+
+        fs.writeFileSync(path, iconv.convert(content));
     }
 }
 

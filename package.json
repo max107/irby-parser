@@ -15,6 +15,7 @@
     "json2csv": "^3.11.5",
     "needle": "^2.1.1",
     "random-useragent": "^0.3.1",
+    "striptags": "^3.1.1",
     "tress": "^1.0.5"
   },
   "pkg": {

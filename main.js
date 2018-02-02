@@ -7,6 +7,7 @@ const randomUseragent = require('random-useragent');
 const fs = require('fs');
 const json2csv = require('json2csv');
 const Iconv = require('iconv').Iconv;
+const excelize = require('excelize');
 
 let results = [];
 let url = 'http://irby.kz/ru/';
@@ -163,10 +164,18 @@ function parse() {
 
 function read() {
     fs.readFile('./data.json', 'utf8', (err, contents) => {
-        save('./data.csv', prepare(JSON.parse(contents)));
+        const items = prepare(JSON.parse(contents));
+
+        // save('./data.csv', items);
+
+        excelize(items, './', 'data.xlsx', 'sheet', err => {
+            if (err) {
+                throw err;
+            }
+        });
     });
 }
 
-// read();
+read();
 
-parse();
+// parse();
